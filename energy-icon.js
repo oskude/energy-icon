@@ -1,7 +1,7 @@
 /**
 * @css --energy-icon-orientation: [left|right]
 * @attribute energy-class
-* @attribute label-orientation [left|right]
+* @attribute icon-orientation [left|right]
 */
 class EnergyIcon extends HTMLElement
 {
@@ -89,20 +89,20 @@ class EnergyIcon extends HTMLElement
 	static get observedAttributes ()
 	{
 		return [
-			"label-orientation",
+			"icon-orientation",
 			"energy-class"
 		];
 	}
 
 	get labelOrientation ()
 	{
-		return this.getAttribute("label-orientation");
+		return this.getAttribute("icon-orientation");
 	}
 
 	set labelOrientation (x)
 	{
 		if (x != this.labelOrientation) {
-			this.setAttribute("label-orientation", x);
+			this.setAttribute("icon-orientation", x);
 			this._modifyLabel();
 		}
 	}
@@ -125,7 +125,7 @@ class EnergyIcon extends HTMLElement
 	attributeChangedCallback (name, oldVal, newVal)
 	{
 		switch(name){
-			case "label-orientation":
+			case "icon-orientation":
 				this.labelOrientation = newVal; break;
 			case "energy-class":
 				this.energyClass = newVal; break;
