@@ -13,7 +13,7 @@ class EnergyIcon extends HTMLElement
 			<style>
 				:host {
 					height: 1.3em;
-					display: inline-block;
+					display: flex;
 					--color-a: #33a357;
 					--color-b: #79b752;
 					--color-c: #c3d545;
